@@ -1,4 +1,5 @@
 import { type Canvas, type CanvasRenderingContext2D } from 'canvas';
+import { jest } from '@jest/globals';
 
 // Mock canvas
 const canvas = {
