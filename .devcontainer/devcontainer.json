@@ -43,6 +43,6 @@
   "remoteUser": "node",
 
   "mounts": [
-    "source=${localWorkspaceFolder}/.git,target=/workspaces/badge-generator/.git,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/.git,target=/workspaces/badge-cli-generator/.git,type=bind,consistency=cached"
   ]
 }
