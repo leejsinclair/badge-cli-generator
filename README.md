@@ -1,5 +1,7 @@
 # Badge Generator
 
+[![Build Status](https://github.com/leejsinclair/badge-cli-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/leejsinclair/badge-cli-generator/actions)
+
 A TypeScript-based badge generator that creates circular badges with icons and text.
 
 ## Features
