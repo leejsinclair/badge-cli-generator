@@ -107,6 +107,22 @@ npm run build
 npm test
 ```
 
+### Dev Container Authentication
+If you're using the dev container and encounter git authentication issues:
+
+1. **Authenticate with GitHub CLI** (recommended):
+   ```bash
+   gh auth login --git-protocol https
+   ```
+   Choose "Paste an authentication token" and use a [Personal Access Token](https://github.com/settings/tokens) with `repo` scope.
+
+2. **If you see SSH errors**, ensure the remote uses HTTPS:
+   ```bash
+   git remote set-url origin https://github.com/leejsinclair/badge-cli-generator.git
+   ```
+
+The dev container includes all necessary tools (Git, Node.js, GitHub CLI) pre-configured for development.
+
 ### Scripts
 - `npm run build` - Download icons and compile TypeScript
 - `npm start generate` - Run the badge generator
