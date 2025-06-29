@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "problemMatcher": ["$tsc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "tsc: build"
+        },
+        {
+            "type": "npm",
+            "script": "lint",
+            "problemMatcher": ["$eslint-stylish"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "label": "npm: lint"
+        }
+    ]
+}

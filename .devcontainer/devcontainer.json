@@ -1,0 +1,48 @@
+{
+  "name": "Badge Generator Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-eslint",
+        "ms-vscode.vscode-jest",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "ms-vscode.hexeditor",
+        "ms-vscode.vscode-github-pullrequest",
+        "github.vscode-github-actions"
+      ],
+      "settings": {
+        "typescript.preferences.includePackageJsonAutoImports": "auto",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "files.eol": "\n",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "git.enableCommitSigning": false
+      }
+    }
+  },
+
+  "forwardPorts": [3000, 8080],
+
+  "postCreateCommand": "npm install && npm run build",
+
+  "postStartCommand": "echo '🚀 Badge Generator development environment ready!'",
+
+  "remoteUser": "node",
+
+  "mounts": [
+    "source=${localWorkspaceFolder}/.git,target=/workspaces/badge-generator/.git,type=bind,consistency=cached"
+  ]
+}

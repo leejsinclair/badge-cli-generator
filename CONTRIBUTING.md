@@ -4,6 +4,14 @@ Thank you for your interest in contributing to Badge Generator! We welcome contr
 
 ## 🚀 Quick Start
 
+### Option 1: Dev Container (Recommended)
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/yourusername/badge-cli-generator.git`
+3. Open in VS Code: `code badge-cli-generator`
+4. Click "Reopen in Container" when prompted
+5. Everything is ready! Dependencies installed, extensions configured.
+
+### Option 2: Local Development
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/yourusername/badge-cli-generator.git`
 3. Install dependencies: `npm install`
@@ -13,6 +21,11 @@ Thank you for your interest in contributing to Badge Generator! We welcome contr
 ## 🛠 Development Workflow
 
 ### Prerequisites
+**Option A - Dev Container:**
+- VS Code with Dev Containers extension
+- Docker
+
+**Option B - Local Development:**
 - Node.js 18+ and npm
 - Git
 

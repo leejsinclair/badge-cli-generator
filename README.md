@@ -18,6 +18,18 @@ A TypeScript-based CLI tool that creates beautiful circular badges with icons an
 
 ## 🚀 Quick Start
 
+### Option 1: Using Dev Containers (Recommended)
+Perfect for a consistent development environment:
+
+```bash
+# Prerequisites: VS Code + Dev Containers extension + Docker
+git clone https://github.com/leejsinclair/badge-cli-generator.git
+cd badge-cli-generator
+code .
+# Click "Reopen in Container" when prompted
+```
+
+### Option 2: Local Development
 ```bash
 # Clone the repository
 git clone https://github.com/leejsinclair/badge-cli-generator.git
@@ -77,6 +89,13 @@ The generator includes hundreds of icons from the [Lucide](https://lucide.dev/) 
 
 ## 🛠️ Development
 
+### Dev Container (Recommended)
+Use the included development container for a consistent environment:
+- Node.js 20, all dependencies pre-installed
+- VS Code extensions and settings configured
+- See [.devcontainer/README.md](.devcontainer/README.md) for details
+
+### Local Development
 ### Prerequisites
 - Node.js 18+ and npm
 - Canvas dependencies (automatically handled)
