@@ -5,7 +5,7 @@ import {
   getAvailableColors,
   type ColorName,
 } from '../createBadge/createBadgeTypes'
-import { describe, it, expect, beforeEach } from '@jest/globals'
+import { describe, it, expect } from '@jest/globals'
 
 describe('Color Utils', () => {
   it('should have correct color definitions', () => {
