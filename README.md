@@ -10,6 +10,21 @@ A TypeScript-based badge generator that creates circular badges with icons and t
 - Save badges as PNG files
 - Configurable dimensions and styling
 
+```bash
+$ npm start generate
+
+✔ Enter the badge text: Example
+✔ Choose an SVG icon: zap.svg
+✔ Choose a color: secondary
+✔ Enter the output filename (without extension): example-badge
+✔ Enter the badge size (optional): 200
+
+Generating badge...
+Badge generated successfully: example-badge.png
+```
+
+![Example](./resources/example-badge.png "Example")
+
 ## Installation
 
 1. Clone the repository
@@ -17,6 +32,13 @@ A TypeScript-based badge generator that creates circular badges with icons and t
    ```bash
    npm install
    ```
+
+## Build
+
+The build process does 2 things:
+
+1. Download icons from the Free Icons repository
+2. Compile the TypeScript code
 
 ## Usage
 
@@ -27,12 +49,12 @@ A TypeScript-based badge generator that creates circular badges with icons and t
 
 2. Run the generator:
    ```bash
-   npm start
+   npm start generate
    ```
 
    Or in development mode:
    ```bash
-   npm run dev
+   npm run dev generate
    ```
 
 ## Configuration
