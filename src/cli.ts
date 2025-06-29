@@ -1,12 +1,12 @@
 import { input, select } from '@inquirer/prompts';
 import { BadgeGenerator } from './badge-generator';
 import * as fs from 'fs/promises';
-import { BadgeConfig } from './createBadge/createBadgeTypes';
+import { BadgeConfig, ColorName, colors } from './createBadge/createBadgeTypes';
 
 async function promptForConfig(): Promise<{
     text: string;
     icon: string;
-    color: string;
+    color: ColorName;
     output: string;
     size: string;
 }> {
@@ -19,7 +19,7 @@ async function promptForConfig(): Promise<{
             console.error('Error reading icons directory:', error);
             return ['star.svg']; // Fallback to star if directory not found
         }
-    }
+    };
 
     const icons = await getIcons();
     const answers = {
@@ -35,9 +35,9 @@ async function promptForConfig(): Promise<{
         }) as string,
         color: await select({
             message: 'Choose a color:',
-            choices: Object.keys(BadgeGenerator.colors),
+            choices: Object.keys(colors),
             default: 'primary'
-        }) as string,
+        }) as ColorName,
         output: await input({
             message: 'Enter the output filename (without extension):',
             default: 'badge',
@@ -48,7 +48,7 @@ async function promptForConfig(): Promise<{
             default: '200',
             validate: (input: string) => !input || !isNaN(Number(input))
         })
-    }
+    };
 
     return answers;
 }
