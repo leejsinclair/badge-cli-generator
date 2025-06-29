@@ -1,8 +1,17 @@
+/**
+ * CLI module for the badge generator application.
+ * Provides an interactive command-line interface for creating customized badges.
+ */
+
 import { input, select } from '@inquirer/prompts'
 import { BadgeGenerator } from './badge-generator'
 import * as fs from 'fs/promises'
 import { BadgeConfig, ColorName, colors } from './createBadge/createBadgeTypes'
 
+/**
+ * Prompts the user for badge configuration through an interactive CLI.
+ * @returns A promise that resolves to the user's configuration choices.
+ */
 async function promptForConfig(): Promise<{
   text: string
   icon: string
@@ -10,6 +19,10 @@ async function promptForConfig(): Promise<{
   output: string
   size: string
 }> {
+  /**
+   * Retrieves available SVG icons from the icons directory.
+   * @returns A promise that resolves to an array of SVG filenames.
+   */
   const getIcons = async () => {
     const iconsDir = './dist/icons'
     try {
@@ -53,6 +66,10 @@ async function promptForConfig(): Promise<{
   return answers
 }
 
+/**
+ * Main CLI function that orchestrates the badge generation process.
+ * Prompts the user for configuration, creates the badge, and handles errors.
+ */
 export async function cli() {
   try {
     const answers = await promptForConfig()

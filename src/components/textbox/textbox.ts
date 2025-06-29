@@ -1,14 +1,35 @@
+/**
+ * TextBox component for rendering text labels on badges.
+ * Creates rounded rectangle text boxes with centered text and subtle shadows.
+ */
+
 import { CanvasRenderingContext2D } from 'canvas'
 
+/**
+ * Configuration object for drawing a text box.
+ */
 export interface TextBoxConfig {
+  /** The total size of the canvas */
   size: number
+  /** The diameter of the circular background */
   circleDiameter: number
+  /** The canvas rendering context to draw on */
   ctx: CanvasRenderingContext2D
+  /** The text content to display */
   text: string
+  /** The text color in hex format */
   color: string
 }
 
+/**
+ * TextBox component responsible for drawing text labels with rounded backgrounds.
+ */
 export class TextBox {
+  /**
+   * Draws a rounded rectangle text box with centered text.
+   * The text box is positioned to overlap the bottom of the circular background.
+   * @param config - The text box configuration object
+   */
   static draw({ size, circleDiameter, ctx, text, color }: TextBoxConfig) {
     const textBoxWidth = size * 0.8
     const textBoxHeight = size * 0.2

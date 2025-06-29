@@ -7,3 +7,4 @@ node_modules/
 .vscode/
 *.tsbuildinfo
 src/icons/lucide/*
+my-badges/

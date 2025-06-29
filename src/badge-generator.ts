@@ -1,5 +1,6 @@
 import { createCanvas, type CanvasRenderingContext2D } from 'canvas'
-import { writeFileSync } from 'fs'
+import { writeFileSync, mkdirSync } from 'fs'
+import { join, dirname } from 'path'
 import { Background } from './components/background/background'
 import { TextBox } from './components/textbox/textbox'
 import { Icon } from './components/icon/icon'
@@ -8,15 +9,24 @@ import {
   BadgeConfig,
   isValidColor,
   getColorHex,
-  ColorName,
 } from './createBadge/createBadgeTypes'
 
+/**
+ * BadgeGenerator is responsible for creating badge images with customizable background, icon, and text.
+ * It uses the Canvas API to draw the badge and saves the result as a PNG file.
+ */
 export class BadgeGenerator {
   private static readonly colors = colors
   private readonly defaultSize = 200
 
   constructor() {}
 
+  /**
+   * Creates a badge image based on the provided configuration.
+   * @param config - The badge configuration object containing color, size, icon, text, and output path.
+   * @returns The output file path if successful, or null if an error occurs.
+   * @throws Error if the provided color is invalid.
+   */
   async createBadge(config: BadgeConfig): Promise<string | null> {
     if (!isValidColor(config.color)) {
       throw new Error(`Invalid color. Choose from: ${Object.keys(colors).join(', ')}`)
@@ -54,15 +64,28 @@ export class BadgeGenerator {
 
     // Save the image
     try {
+      // Ensure the my-badges directory exists
+      const outputPath = join('my-badges', config.output)
+      const outputDir = dirname(outputPath)
+      mkdirSync(outputDir, { recursive: true })
+      
       const buffer = canvas.toBuffer('image/png')
-      writeFileSync(config.output, buffer)
-      return config.output
+      writeFileSync(outputPath, buffer)
+      return outputPath
     } catch (error) {
       console.error('Error saving badge:', error)
       return null
     }
   }
 
+  /**
+   * Draws the circular background for the badge.
+   * @param size - The total size of the badge canvas.
+   * @param scale - The scale factor for the circle diameter.
+   * @param ctx - The CanvasRenderingContext2D to draw on.
+   * @param colorHex - The background color in hex format.
+   * @returns An object containing circle diameter, center coordinates, and radius.
+   */
   private drawBackground(
     size: number,
     scale: number,
@@ -79,13 +102,5 @@ export class BadgeGenerator {
     ctx.fillStyle = colorHex
     ctx.fill()
     return { circleDiameter, centerX, centerY, circleRadius }
-  }
-
-  private isValidColor(color: ColorName): boolean {
-    return color in BadgeGenerator.colors
-  }
-
-  private getColorHex(color: ColorName): string {
-    return BadgeGenerator.colors[color]
   }
 }
