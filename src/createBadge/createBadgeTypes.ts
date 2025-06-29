@@ -5,28 +5,27 @@ export const colors = {
   success: '#8AC46B',
   warning: '#FFD66B',
   info: '#6B88FF',
-  error: '#FF6B87'
-} as const;
+  error: '#FF6B87',
+} as const
 
 export function getColorHex(color: ColorName): string {
-  return colors[color];
+  return colors[color]
 }
 
 export function isValidColor(color: ColorName): boolean {
-  return color in colors;
+  return color in colors
 }
 
 export function getAvailableColors(): ColorName[] {
-  return Object.keys(colors) as ColorName[];
+  return Object.keys(colors) as ColorName[]
 }
-
 
 export interface BadgeConfig {
-  text: string;
-  color: ColorName;
-  output: string;
-  size?: number;
-  icon?: string;
+  text: string
+  color: ColorName
+  output: string
+  size?: number
+  icon?: string
 }
 
-export type ColorName = keyof typeof colors;
+export type ColorName = keyof typeof colors

@@ -1,11 +1,11 @@
-import { cli } from './cli';
+import { cli } from './cli'
 
 async function main() {
   try {
-    await cli();
+    await cli()
   } catch (error) {
-    console.error('Error:', error instanceof Error ? error.message : 'An unknown error occurred');
+    console.error('Error:', error instanceof Error ? error.message : 'An unknown error occurred')
   }
 }
 
-main();
+main()
