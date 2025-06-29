@@ -3,6 +3,35 @@
   "version": "1.0.0",
   "description": "A badge generator that creates circular badges with icons and text",
   "main": "dist/index.js",
+  "bin": {
+    "badge-generator": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leejsinclair/badge-cli-generator.git"
+  },
+  "homepage": "https://github.com/leejsinclair/badge-cli-generator#readme",
+  "bugs": {
+    "url": "https://github.com/leejsinclair/badge-cli-generator/issues"
+  },
+  "keywords": [
+    "badge",
+    "generator",
+    "cli",
+    "typescript",
+    "canvas",
+    "svg",
+    "icons",
+    "circular",
+    "png"
+  ],
+  "author": "Lee Sinclair",
+  "license": "MIT",
   "scripts": {
     "build": "npm run download-icons && tsc",
     "start": "node dist/index.js",

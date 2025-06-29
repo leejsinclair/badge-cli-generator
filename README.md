@@ -1,16 +1,39 @@
 # Badge Generator
 
 [![Build Status](https://github.com/leejsinclair/badge-cli-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/leejsinclair/badge-cli-generator/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/badge-generator.svg)](https://badge.fury.io/js/badge-generator)
 
-A TypeScript-based badge generator that creates circular badges with icons and text.
+A TypeScript-based CLI tool that creates beautiful circular badges with icons and text. Perfect for generating custom badges for projects, achievements, or any visual identification needs.
 
-## Features
+## ✨ Features
 
-- Create circular badges with icons and text
-- Choose from a cohesive color palette
-- Support for custom icon fonts
-- Save badges as PNG files
-- Configurable dimensions and styling
+- 🎨 **Beautiful circular badges** with customizable colors
+- 🎯 **Rich icon library** powered by Lucide icons
+- 📝 **Custom text labels** with automatic sizing
+- 🎭 **Interactive CLI** for easy badge creation
+- 🖼️ **PNG output** with high-quality rendering
+- 🎨 **Predefined color palette** for consistent styling
+- 📁 **Organized output** saves badges to `my-badges/` folder
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/leejsinclair/badge-cli-generator.git
+cd badge-cli-generator
+
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Generate your first badge
+npm start generate
+```
+
+## 📖 Interactive Example
 
 ```bash
 $ npm start generate
@@ -22,65 +45,134 @@ $ npm start generate
 ✔ Enter the badge size (optional): 200
 
 Generating badge...
-Badge generated successfully: example-badge.png
+Badge generated successfully: my-badges/example-badge.png
 ```
 
-![Example](./resources/example-badge.png "Example")
+![Example Badge](./resources/example-badge.png "Example Badge")
 
-## Installation
+## 🎨 Color Palette
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Choose from our carefully selected color palette:
 
-## Build
+| Color | Hex Code | Preview |
+|-------|----------|---------|
+| primary | #FF6B6B | 🔴 Red |
+| secondary | #4ECDC4 | 🩵 Teal |
+| accent | #45B7D1 | 🔵 Blue |
+| success | #8AC46B | 🟢 Green |
+| warning | #FFD66B | 🟡 Yellow |
+| info | #6B88FF | 🟣 Purple |
+| error | #FF6B87 | 🔴 Pink |
 
-The build process does 2 things:
+## 🎯 Available Icons
 
-1. Download icons from the Free Icons repository
-2. Compile the TypeScript code
+The generator includes hundreds of icons from the [Lucide](https://lucide.dev/) icon library. Popular choices include:
+- `star.svg` - Perfect for achievements
+- `heart.svg` - Great for favorites
+- `zap.svg` - Ideal for energy/power themes
+- `shield.svg` - Security and protection
+- `trophy.svg` - Awards and competitions
+- `check.svg` - Completion and success
+- And hundreds more!
 
-## Usage
+## 🛠️ Development
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+### Prerequisites
+- Node.js 18+ and npm
+- Canvas dependencies (automatically handled)
 
-2. Run the generator:
-   ```bash
-   npm start generate
-   ```
+### Setup
+```bash
+npm install
+npm run build
+npm test
+```
 
-   Or in development mode:
-   ```bash
-   npm run dev generate
-   ```
+### Scripts
+- `npm run build` - Download icons and compile TypeScript
+- `npm start generate` - Run the badge generator
+- `npm run dev generate` - Development mode with ts-node
+- `npm test` - Run test suite
+- `npm run lint` - Lint code
+- `npm run format` - Format code with Prettier
+## 🏗️ Architecture
 
-## Configuration
+- **Badge Generator**: Core class handling canvas rendering
+- **Components**: Modular rendering system (Background, Icon, TextBox)
+- **CLI Interface**: Interactive command-line tool
+- **Icon Management**: Automated SVG icon downloading and processing
+- **Type Safety**: Full TypeScript implementation with comprehensive types
 
-The badge generator accepts the following configuration options:
+## 🧪 Testing
 
-- `iconFont`: Path to the icon font file
-- `iconChar`: The character from the icon font to use
-- `text`: Text to display below the icon
-- `color`: Color key from the predefined palette (primary, secondary, accent, success, warning, info, error)
-- `output`: Path where the badge will be saved
-- `size`: Optional badge size (defaults to 200px)
+Comprehensive test suite covering:
+- Color validation and conversion
+- Background rendering logic
+- Icon processing and scaling
+- Text box rendering and positioning
 
-## Color Palette
+```bash
+npm test              # Run all tests
+npm run test:watch    # Run tests in watch mode
+```
 
-The generator supports the following predefined colors:
-- primary: #FF6B6B
-- secondary: #4ECDC4
-- accent: #45B7D1
-- success: #8AC46B
-- warning: #FFD66B
-- info: #6B88FF
-- error: #FF6B87
+## 🤝 Contributing
 
-## License
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-MIT
+### Quick Contributing Steps:
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes and add tests
+4. Commit using [Conventional Commits](https://conventionalcommits.org/)
+5. Push to your fork and submit a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Lucide](https://lucide.dev/) for the beautiful icon library
+- [Canvas API](https://github.com/Automattic/node-canvas) for high-quality image rendering
+- [Inquirer](https://github.com/SBoudrias/Inquirer.js) for the interactive CLI experience
+
+## 📚 API Documentation
+
+### BadgeGenerator Class
+
+```typescript
+import { BadgeGenerator } from './badge-generator'
+
+const generator = new BadgeGenerator()
+
+await generator.createBadge({
+  text: 'Achievement',
+  color: 'primary',
+  icon: 'star.svg',
+  output: 'my-achievement.png',
+  size: 200  // optional, defaults to 200
+})
+```
+
+### Configuration Options
+
+```typescript
+interface BadgeConfig {
+  text: string;           // Text to display
+  color: ColorName;       // Color from predefined palette
+  icon?: string;          // SVG icon filename (optional)
+  output: string;         // Output filename
+  size?: number;          // Badge size in pixels (optional)
+}
+```
+
+---
+
+<div align="center">
+
+**[⭐ Star this repo](https://github.com/leejsinclair/badge-cli-generator)** • **[🐛 Report Bug](https://github.com/leejsinclair/badge-cli-generator/issues)** • **[💡 Request Feature](https://github.com/leejsinclair/badge-cli-generator/issues)**
+
+Made with ❤️ by the Badge Generator team
+
+</div>
