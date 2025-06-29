@@ -19,6 +19,7 @@ A TypeScript-based CLI tool that creates beautiful circular badges with icons an
 ## 🚀 Quick Start
 
 ### Option 1: Using Dev Containers (Recommended)
+
 Perfect for a consistent development environment:
 
 ```bash
@@ -30,6 +31,7 @@ code .
 ```
 
 ### Option 2: Local Development
+
 ```bash
 # Clone the repository
 git clone https://github.com/leejsinclair/badge-cli-generator.git
@@ -60,25 +62,26 @@ Generating badge...
 Badge generated successfully: my-badges/example-badge.png
 ```
 
-![Example Badge](./resources/example-badge.png "Example Badge")
+![Example Badge](./resources/example-badge.png 'Example Badge')
 
 ## 🎨 Color Palette
 
 Choose from our carefully selected color palette:
 
-| Color | Hex Code | Preview |
-|-------|----------|---------|
-| primary | #FF6B6B | 🔴 Red |
-| secondary | #4ECDC4 | 🩵 Teal |
-| accent | #45B7D1 | 🔵 Blue |
-| success | #8AC46B | 🟢 Green |
-| warning | #FFD66B | 🟡 Yellow |
-| info | #6B88FF | 🟣 Purple |
-| error | #FF6B87 | 🔴 Pink |
+| Color     | Hex Code | Preview   |
+| --------- | -------- | --------- |
+| primary   | #FF6B6B  | 🔴 Red    |
+| secondary | #4ECDC4  | 🩵 Teal   |
+| accent    | #45B7D1  | 🔵 Blue   |
+| success   | #8AC46B  | 🟢 Green  |
+| warning   | #FFD66B  | 🟡 Yellow |
+| info      | #6B88FF  | 🟣 Purple |
+| error     | #FF6B87  | 🔴 Pink   |
 
 ## 🎯 Available Icons
 
 The generator includes hundreds of icons from the [Lucide](https://lucide.dev/) icon library. Popular choices include:
+
 - `star.svg` - Perfect for achievements
 - `heart.svg` - Great for favorites
 - `zap.svg` - Ideal for energy/power themes
@@ -90,17 +93,22 @@ The generator includes hundreds of icons from the [Lucide](https://lucide.dev/) 
 ## 🛠️ Development
 
 ### Dev Container (Recommended)
+
 Use the included development container for a consistent environment:
+
 - Node.js 20, all dependencies pre-installed
 - VS Code extensions and settings configured
 - See [.devcontainer/README.md](.devcontainer/README.md) for details
 
 ### Local Development
+
 ### Prerequisites
+
 - Node.js 18+ and npm
 - Canvas dependencies (automatically handled)
 
 ### Setup
+
 ```bash
 npm install
 npm run build
@@ -108,12 +116,15 @@ npm test
 ```
 
 ### Dev Container Authentication
+
 If you're using the dev container and encounter git authentication issues:
 
 1. **Authenticate with GitHub CLI** (recommended):
+
    ```bash
    gh auth login --git-protocol https
    ```
+
    Choose "Paste an authentication token" and use a [Personal Access Token](https://github.com/settings/tokens) with `repo` scope.
 
 2. **If you see SSH errors**, ensure the remote uses HTTPS:
@@ -124,12 +135,14 @@ If you're using the dev container and encounter git authentication issues:
 The dev container includes all necessary tools (Git, Node.js, GitHub CLI) pre-configured for development.
 
 ### Scripts
+
 - `npm run build` - Download icons and compile TypeScript
 - `npm start generate` - Run the badge generator
 - `npm run dev generate` - Development mode with ts-node
 - `npm test` - Run test suite
 - `npm run lint` - Lint code
 - `npm run format` - Format code with Prettier
+
 ## 🏗️ Architecture
 
 - **Badge Generator**: Core class handling canvas rendering
@@ -141,6 +154,7 @@ The dev container includes all necessary tools (Git, Node.js, GitHub CLI) pre-co
 ## 🧪 Testing
 
 Comprehensive test suite covering:
+
 - Color validation and conversion
 - Background rendering logic
 - Icon processing and scaling
@@ -156,6 +170,7 @@ npm run test:watch    # Run tests in watch mode
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 ### Quick Contributing Steps:
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
 3. Make your changes and add tests
@@ -186,7 +201,7 @@ await generator.createBadge({
   color: 'primary',
   icon: 'star.svg',
   output: 'my-achievement.png',
-  size: 200  // optional, defaults to 200
+  size: 200, // optional, defaults to 200
 })
 ```
 
@@ -194,11 +209,11 @@ await generator.createBadge({
 
 ```typescript
 interface BadgeConfig {
-  text: string;           // Text to display
-  color: ColorName;       // Color from predefined palette
-  icon?: string;          // SVG icon filename (optional)
-  output: string;         // Output filename
-  size?: number;          // Badge size in pixels (optional)
+  text: string // Text to display
+  color: ColorName // Color from predefined palette
+  icon?: string // SVG icon filename (optional)
+  output: string // Output filename
+  size?: number // Badge size in pixels (optional)
 }
 ```
 
