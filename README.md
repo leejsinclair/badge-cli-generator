@@ -16,6 +16,16 @@ A TypeScript-based CLI tool that creates beautiful circular badges with icons an
 - 🎨 **Predefined color palette** for consistent styling
 - 📁 **Organized output** saves badges to `my-badges/` folder
 
+## ⚠️ Hobby Project Notice
+
+This is a personal hobby project. While contributions are welcome, please don't expect:
+
+- Regular updates or releases
+- Immediate responses to issues/PRs
+- Long-term maintenance commitments
+
+Feel free to fork and adapt for your own needs!
+
 ## 🚀 Quick Start
 
 ### Option 1: Using Dev Containers (Recommended)

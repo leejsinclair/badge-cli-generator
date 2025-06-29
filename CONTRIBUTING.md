@@ -1,10 +1,15 @@
-# Contributing to Badge Generator
+# Contributing
+
+This is a hobby project! Contributions are welcome but no guarantees on response times.
+
+## Quick Start
 
 Thank you for your interest in contributing to Badge Generator! We welcome contributions from everyone.
 
 ## 🚀 Quick Start
 
 ### Option 1: Dev Container (Recommended)
+
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/yourusername/badge-cli-generator.git`
 3. Open in VS Code: `code badge-cli-generator`
@@ -12,6 +17,7 @@ Thank you for your interest in contributing to Badge Generator! We welcome contr
 5. Everything is ready! Dependencies installed, extensions configured.
 
 ### Option 2: Local Development
+
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/yourusername/badge-cli-generator.git`
 3. Install dependencies: `npm install`
@@ -21,15 +27,19 @@ Thank you for your interest in contributing to Badge Generator! We welcome contr
 ## 🛠 Development Workflow
 
 ### Prerequisites
+
 **Option A - Dev Container:**
+
 - VS Code with Dev Containers extension
 - Docker
 
 **Option B - Local Development:**
+
 - Node.js 18+ and npm
 - Git
 
 ### Setup
+
 ```bash
 npm install
 npm run build
@@ -37,6 +47,7 @@ npm test
 ```
 
 ### Making Changes
+
 1. Create a feature branch: `git checkout -b feature/your-feature-name`
 2. Make your changes
 3. Run tests: `npm test`
@@ -58,6 +69,7 @@ test(auth): add unit tests for login component
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -100,6 +112,7 @@ npm run format      # Format code with Prettier
    - Screenshots if applicable
 
 ### PR Checklist
+
 - [ ] Tests pass locally
 - [ ] Code follows style guidelines
 - [ ] Documentation updated if needed
@@ -109,6 +122,7 @@ npm run format      # Format code with Prettier
 ## 🐛 Reporting Bugs
 
 When reporting bugs, please include:
+
 - Clear description of the issue
 - Steps to reproduce
 - Expected vs actual behavior
@@ -118,6 +132,7 @@ When reporting bugs, please include:
 ## 💡 Suggesting Features
 
 For feature requests:
+
 - Check if it already exists in issues
 - Provide clear use case and rationale
 - Consider implementation complexity
@@ -148,12 +163,3 @@ src/
 ## 📄 License
 
 By contributing, you agree that your contributions will be licensed under the MIT License.
-
-## ❓ Questions?
-
-Feel free to:
-- Open an issue for questions
-- Start a discussion for broader topics
-- Reach out to maintainers
-
-Thank you for contributing! 🎉
