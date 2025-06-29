@@ -1,6 +1,6 @@
 import { Background } from '../components/background/background'
 import { createCanvas, type CanvasRenderingContext2D } from 'canvas'
-import { describe, it, expect } from '@jest/globals'
+import { describe, it, expect, beforeEach } from '@jest/globals'
 
 describe('Background', () => {
   let ctx: CanvasRenderingContext2D

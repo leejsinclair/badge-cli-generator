@@ -1,6 +1,6 @@
 import { Icon } from '../components/icon/icon'
 import { createCanvas, type CanvasRenderingContext2D } from 'canvas'
-import { describe, it, expect, jest } from '@jest/globals'
+import { describe, it, expect, jest, beforeEach, afterEach } from '@jest/globals'
 
 const mockImage = new Image()
 mockImage.onload = jest.fn()

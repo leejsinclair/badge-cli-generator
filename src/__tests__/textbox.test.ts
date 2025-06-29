@@ -1,6 +1,6 @@
 import { TextBox } from '../components/textbox/textbox'
 import { createCanvas, type CanvasRenderingContext2D } from 'canvas'
-import { describe, it, expect, jest } from '@jest/globals'
+import { describe, it, expect, jest, beforeEach } from '@jest/globals'
 
 describe('TextBox', () => {
   let ctx: CanvasRenderingContext2D
