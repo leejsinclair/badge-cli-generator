@@ -19,12 +19,12 @@ const iconSources: IconSource[] = [
     path: 'icons',
     color: '#000000'
   },
-//   {
-//     name: 'tabler',
-//     url: 'https://github.com/tabler/tabler-icons',
-//     path: 'icons',
-//     color: '#000000'
-//   }
+  //   {
+  //     name: 'tabler',
+  //     url: 'https://github.com/tabler/tabler-icons',
+  //     path: 'icons',
+  //     color: '#000000'
+  //   }
 ];
 
 async function downloadIcons() {
@@ -34,10 +34,10 @@ async function downloadIcons() {
 
     for (const source of iconSources) {
       console.log(`Downloading icons from ${source.name}...`);
-      
+
       // Clone repository
       await execAsync(`git clone ${source.url} tmp/${source.name}`);
-      
+
       // Get list of SVG files
       try {
         const svgFiles = await fs.readdir(`tmp/${source.name}/${source.path}`);
@@ -45,16 +45,16 @@ async function downloadIcons() {
           if (file.endsWith('.svg')) {
             const filePath = join(`tmp/${source.name}/${source.path}`, file);
             const content = await fs.readFile(filePath, 'utf8');
-            
+
             // Convert black color to white
             let newContent = content;
             if (source.color === '#000000') {
               // Replace black fill
-              newContent = newContent.replace(/fill="#000000"/g, 'fill="#FFFFFF"');
+              newContent = newContent.replace(/fill="#000000"/g, 'fill="#FFFFFF"').replace(/fill="currentColor"/g, 'fill="#FFFFFF"');
               // Replace black stroke
-              newContent = newContent.replace(/stroke="#000000"/g, 'stroke="#FFFFFF"');
+              newContent = newContent.replace(/stroke="#000000"/g, 'stroke="#FFFFFF"').replace(/stroke="currentColor"/g, 'stroke="#FFFFFF"');
             }
-            
+
             // Save to icons directory
             const outputDir = join('dist/icons');
             await fs.mkdir(outputDir, { recursive: true });
@@ -66,11 +66,11 @@ async function downloadIcons() {
         console.error(`Error processing ${source.name}:`, error);
         continue;
       }
-      
+
       // Clean up
       await execAsync(`rm -rf tmp/${source.name}`);
     }
-    
+
     console.log('All icons downloaded and processed successfully!');
   } catch (error) {
     console.error('Error downloading icons:', error);
